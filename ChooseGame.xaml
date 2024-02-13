@@ -1,0 +1,43 @@
+﻿<Window x:Class="TemaMVP.ChooseGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TemaMVP"
+        mc:Ignorable="d"
+        Title="ChooseGame" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="155"/>
+            <Setter Property="FontFamily" Value="MV Boli"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="7,7,7,7" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding  Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding  VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="60"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Thistle" >
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Content=" &lt; BACK" Style="{StaticResource ButtonStyle}" FontFamily="MV Boli"  Click="Back" Margin="-23,10,0,0"/>
+        <Button Content="New Game" Visibility="Visible" FontFamily="MV Boli"  Foreground="White" Background="Transparent" BorderBrush="Transparent" Width="300" Height="80" FontSize="50"  Margin="230,105,270,249" Click="New_Game"/>
+        <Button x:Name="resume" Content="Resume Game" Visibility="Visible" FontFamily="MV Boli"  Foreground="White" Background="Transparent" BorderBrush="Transparent" Width="400" Height="80" FontSize="50"  Margin="180,190,220,164" Click="Resume_Game"/>
+        <Button x:Name="statistica" Content="Statistica" Visibility="Visible" FontFamily="MV Boli"  Foreground="White" Background="Transparent" BorderBrush="Transparent" Width="400" Height="80" FontSize="50"  Margin="180,275,220,79" Click="Statistica"/>
+
+    </Grid>
+</Window>
